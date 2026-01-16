@@ -1,0 +1,3 @@
+Adafruit CircuitPython 10.1.0-beta.1-21-g57aec3a060-dirty on 2026-01-16; PCA10056 nRF52840-DK with nRF52840
+Board ID:pca10056
+UID:854268E208313E3A

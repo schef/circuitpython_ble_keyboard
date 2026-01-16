@@ -8,5 +8,5 @@ class Pin:
 
 BUTTON_1 = Pin(board.P0_02, "BUTTON_1", True)
 BUTTON_2 = Pin(board.P0_15, "BUTTON_2", True)
-LED_1 = Pin(board.P0_06, "LED_1", True)
-LED_2 = Pin(board.P0_26, "LED_2", True)
+LED_1 = Pin(board.P0_06, "LED_1", False)
+LED_2 = Pin(board.P0_26, "LED_2", False)

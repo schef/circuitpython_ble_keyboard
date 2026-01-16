@@ -34,3 +34,25 @@
 - `cd ports/nordic`
 - `make BOARD=pca10056 clean`
 - `make BOARD=pca10056 flash`
+
+## install libs automaticly
+- `pip3 install circup`
+- `circup install asyncio`
+- `circup install adafruit_ble`
+- `circup install adafruit_bus_device`
+- `circup install adafruit_hid`
+- `circup install neopixel`
+- `circup install simpleio`
+
+
+## install libs manually
+- `pip3 install circup`
+- `circup --path ./extra install asyncio`
+- `circup --path ./extra install adafruit_ble`
+- `circup --path ./extra install adafruit_bus_device`
+- `circup --path ./extra install adafruit_hid`
+- `circup --path ./extra install neopixel`
+- `circup --path ./extra install simpleio`
+- `sudo mount /dev/sdc1 /mnt/usb`
+- `sudo cp ./extras/lib /mnt/usb/ -rf`
+- `sudo umount /mnt/usb`

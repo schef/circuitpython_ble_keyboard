@@ -19,14 +19,14 @@ class Led:
     def set_state(self, state):
         if self.active_high:
             if state:
-                self.output.off()
+                self.output.value = False
             else:
-                self.output.on()
+                self.output.value = True
         else:
             if state:
-                self.output.on()
+                self.output.value = True
             else:
-                self.output.off()
+                self.output.value = False
         self.state = state
 
     def get_state(self):

@@ -2,6 +2,7 @@ import asyncio
 import common
 import buttons
 import leds
+import logic
 
 async def process_time_measure(timeout=20):
     print("[RUNNER]: start process_time_measure")
@@ -22,12 +23,14 @@ def init():
     buttons.init()
     buttons.action()
     leds.init()
+    logic.init()
 
 async def main():
     init()
     tasks = []
     tasks.append(asyncio.create_task(common.loop_async("BUTTONS", buttons.action)))
     tasks.append(asyncio.create_task(common.loop_async("LEDS", leds.action)))
+    tasks.append(asyncio.create_task(logic.action()))
     tasks.append(asyncio.create_task(process_time_measure()))
     for task in tasks:
         await task

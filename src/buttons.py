@@ -17,7 +17,7 @@ class Button:
         self.active_high = active_high
 
     def check(self):
-        state = self.input.value()
+        state = self.input.value
         if self.active_high:
             state = int(not state)
         if state != self.state:
