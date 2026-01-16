@@ -1,0 +1,35 @@
+diff --git a/src/boards/pca10056/board.h b/src/boards/pca10056/board.h
+index 51dc2fb..b7b708e 100644
+--- a/src/boards/pca10056/board.h
++++ b/src/boards/pca10056/board.h
+@@ -25,21 +25,25 @@
+ #ifndef PCA10056_H
+ #define PCA10056_H
+ 
++#include "nrf_gpio.h"
++
+ /*------------------------------------------------------------------*/
+ /* LED
+  *------------------------------------------------------------------*/
+ #define LEDS_NUMBER         2
+-#define LED_PRIMARY_PIN     13
+-#define LED_SECONDARY_PIN   14
++#define LED_PRIMARY_PIN     NRF_GPIO_PIN_MAP(0, 6)
++#define LED_SECONDARY_PIN   NRF_GPIO_PIN_MAP(0, 26)
+ #define LED_STATE_ON        0
+ 
+ /*------------------------------------------------------------------*/
+ /* BUTTON
+  *------------------------------------------------------------------*/
+ #define BUTTONS_NUMBER      2
+-#define BUTTON_1            11
+-#define BUTTON_2            12
+-#define BUTTON_PULL         NRF_GPIO_PIN_PULLUP
++#define BUTTON_1            NRF_GPIO_PIN_MAP(0, 2)
++#define BUTTON_2            NRF_GPIO_PIN_MAP(0, 15)
++#define BUTTON_PULL         NRF_GPIO_PIN_NOPULL
++#define BUTTON_ACTIVE  1
++#define BUTTONS_ACTIVE_STATE 0
+ 
+ //--------------------------------------------------------------------+
+ // BLE OTA
