@@ -49,7 +49,7 @@
 - `circup install simpleio`
 
 
-## install libs manually
+## get libs manually
 - `pip3 install circup`
 - `circup --path ./extra install asyncio`
 - `circup --path ./extra install adafruit_ble`
@@ -57,6 +57,8 @@
 - `circup --path ./extra install adafruit_hid`
 - `circup --path ./extra install neopixel`
 - `circup --path ./extra install simpleio`
+
+## install libs manually
 - `sudo mount /dev/sdc1 /mnt/usb`
 - `sudo cp ./extras/lib /mnt/usb/ -rf`
 - `sudo umount /mnt/usb`
