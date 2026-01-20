@@ -13,7 +13,7 @@ options = {
     "DEVICE_SERIAL": "/dev/ttyACM0",
     "BUFFER_SIZE": 512,
     "VERBOSE": False,
-    "MOUNT_DEVICE": "/dev/sdc1",
+    "MOUNT_DEVICE": "/dev/sdb1",
     "MOUNT_PATH": "/mnt/usb",
 }
 

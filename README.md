@@ -1,5 +1,9 @@
 # circuitpython_ble_keyboard
 
+## disable JLink Mass storage device
+- `JLinkExe -device NRF52840_XXAA -if SWD -speed 4000 -autoconnect 1`
+- `MSDDisable`
+
 ## flash prebuild custom firmware
 - `nrfjprog -f nrf52 --eraseall`
 - `nrfjprog --program prebuild_firmware/s140_nrf52_6.1.1_softdevice.hex -f nrf52 --sectorerase --reset`

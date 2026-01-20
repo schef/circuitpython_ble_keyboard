@@ -31,7 +31,7 @@ async def main():
     tasks.append(asyncio.create_task(common.loop_async("BUTTONS", buttons.action)))
     tasks.append(asyncio.create_task(common.loop_async("LEDS", leds.action)))
     tasks.append(asyncio.create_task(logic.action()))
-    tasks.append(asyncio.create_task(process_time_measure()))
+    #tasks.append(asyncio.create_task(process_time_measure()))
     for task in tasks:
         await task
     print("[RUNNER]: Error: loop task finished!")

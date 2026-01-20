@@ -20,11 +20,11 @@ k = None
 def on_buttons_state_change_cb(name, state):
         if name == common_pins.BUTTON_1.name:
             leds.get_led_by_name(common_pins.LED_1.name).set_state(state)
-            if state:
+            if state and ble.connected:
                 k.send(Keycode.LEFT_ARROW)
         elif name == common_pins.BUTTON_2.name:
             leds.get_led_by_name(common_pins.LED_2.name).set_state(state)
-            if state:
+            if state and ble.connected:
                 k.send(Keycode.RIGHT_ARROW)
 
 def init():
@@ -35,9 +35,8 @@ def init():
     device_info = DeviceInfoService(software_revision=adafruit_ble.__version__, manufacturer="Adafruit Industries")
     advertisement = ProvideServicesAdvertisement(hid)
     advertisement.appearance = 961
-    scan_response = Advertisement()
-    scan_response.complete_name = "CircuitPython HID"
     ble = adafruit_ble.BLERadio()
+    ble.name = "CircuitPython HID"
     k = Keyboard(hid.devices)
 
 async def action():
