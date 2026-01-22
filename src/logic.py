@@ -45,11 +45,11 @@ async def action():
     ble.start_advertising(advertisement)
     while True:
         while not ble.connected:
-            await asyncio.sleep(0)
+            await asyncio.sleep(0.01)
 
         print("[LOGIC]: action - connected")
         while ble.connected:
-            await asyncio.sleep(0)
+            await asyncio.sleep(0.01)
         print("[LOGIC]: action - disconnected")
 
         print("[LOGIC]: action - start adv")

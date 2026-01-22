@@ -106,6 +106,11 @@ def repl():
     cmd = "tio %s" % (options["DEVICE_SERIAL"])
     os.system(cmd)
 
+@app.command()
+def segger():
+    import segger_client
+    segger_client.main()
+
 
 @app.command()
 def sync():

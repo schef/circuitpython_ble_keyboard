@@ -4,19 +4,6 @@ import buttons
 import leds
 import logic
 
-async def process_time_measure(timeout=20):
-    print("[RUNNER]: start process_time_measure")
-    timestamp = common.get_millis()
-    bigest = 0
-    while True:
-        await asyncio.sleep(0)
-        timepassed = common.millis_passed(timestamp)
-        if timepassed >= timeout:
-            if timepassed > bigest:
-                bigest = timepassed
-            print("[RUNNER]: timeout warning %d ms with bigest %d" % (timepassed, bigest))
-        timestamp = common.get_millis()
-
 def init():
     print("[RUNNER]: init")
 
