@@ -11,6 +11,7 @@ def init():
     buttons.action()
     leds.init()
     logic.init()
+    leds.boot_display()
 
 async def main():
     init()

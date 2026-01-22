@@ -1,5 +1,6 @@
 import common
 import common_pins
+import time
 
 leds = []
 led_pins = [
@@ -58,6 +59,18 @@ def init():
     print("[LEDS]: init")
     init_leds()
     action()
+
+def boot_display():
+    led = get_led_by_name(common_pins.LED_1.name)
+    if led is not None:
+        led.set_state(1)
+        time.sleep(0.1)
+        led.set_state(0)
+        time.sleep(0.1)
+        led.set_state(1)
+        time.sleep(0.1)
+        led.set_state(0)
+        time.sleep(0.3)
 
 def action():
     pass

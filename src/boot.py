@@ -9,7 +9,9 @@ if hasattr(supervisor, "disable_autoreload"):
     supervisor.disable_autoreload()
 
 if supervisor.runtime.usb_connected:
+    print("[BOOT] USB connected")
     usb_cdc.enable(console=True, data=False)
 else:
-    usb_cdc.disable()
+    print("[BOOT] USB not connected")
+    #usb_cdc.disable()
     storage.disable_usb_drive()

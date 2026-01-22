@@ -6,9 +6,12 @@
 
 ## flash prebuild custom firmware
 - `nrfjprog -f nrf52 --eraseall`
-- `nrfjprog --program prebuild_firmware/s140_nrf52_6.1.1_softdevice.hex -f nrf52 --sectorerase --reset`
-- `nrfjprog --program prebuild_firmware/pca10056_bootloader-0.9.2-39-g0147d71-dirty_nosd.hex --sectoranduicrerase -f nrf52 --reset`
-- `nrfjprog --program prebuild_firmware/firmware.hex --sectorerase -f nrf52`
+- `nrfjprog -f nrf52 --program prebuild_firmware/s140_nrf52_6.1.1_softdevice.hex --sectorerase --reset`
+- `nrfjprog -f nrf52 --program prebuild_firmware/pca10056_bootloader-0.9.2-39-g0147d71-dirty_nosd.hex --sectoranduicrerase --verify --reset`
+- `nrfjprog -f nrf52 --program prebuild_firmware/firmware.hex --sectorerase`
+- `nrfjprog -f nrf52 --erasepage 0xFF000`
+- `nrfjprog -f nrf52 --memwr 0xFF000 --val 0x00000001`
+- `nrfjprog -f nrf52 --reset`
 
 ## build custom bootloader
 - `git clone https://github.com/adafruit/Adafruit_nRF52_Bootloader`
